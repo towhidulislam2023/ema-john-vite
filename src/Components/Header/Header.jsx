@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../../../public/Logo.svg"
 
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
             <div className="navbar bg-[#1C2B35] ">
                 <div className='w-[80%] mx-auto'>
                     <div className="flex-1">
-                        <img src="../../../public/Logo.svg" alt="" />
+                        <img src={logo}alt="" />
                     </div>
                     <div className="flex-none">
                         <ul className="menu menu-horizontal px-1 text-white">
