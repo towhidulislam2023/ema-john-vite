@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart, removeFromDb } from '../../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
+import { Link } from 'react-router-dom';
 const Shop = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
@@ -67,6 +68,10 @@ const Shop = () => {
         setCart(newCart)
         addToDb(product.id)
     }
+    const handelClearCart =()=>{
+        setCart([])
+        deleteShoppingCart()
+    }
     return (
         <>
             <div className='flex gap-5'>
@@ -82,7 +87,9 @@ const Shop = () => {
                     </div>
                 </div>
                 <div className='w-[25%] h-screen  bg-[#f39e1e6c] mx-2 sticky top-0'>
-                    <Cart cart={cart}></Cart>
+                    <Cart cart={cart} handelClearCart={handelClearCart}>
+                        <Link to={'/review'}><button className="btn btn-wide bg-[#FF9900] block text-center border-none hover:bg-[#d48b1d] ">Review Order</button></Link>
+                        </Cart>
                 </div>
             </div>
 

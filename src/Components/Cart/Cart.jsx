@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.css'
+import { deleteShoppingCart } from '../../../utilities/fakedb';
 
 const Cart = (props) => {
     const cart = props.cart
@@ -30,9 +31,8 @@ const Cart = (props) => {
                 <h3 className='my-2'>Grand Total:{total.toFixed(2)} </h3>
             </div>
             <div className='flex items-center flex-col my-9'>
-                <button className="btn btn-wide bg-red-600 block text-center border-none hover:bg-red-500 my-9">Clear Cart</button>
-                <button className="btn btn-wide bg-[#FF9900] block text-center border-none hover:bg-[#d48b1d] ">Review Order</button>
-
+                <button onClick={props.handelClearCart}  className="btn btn-wide bg-red-600 block text-center border-none hover:bg-red-500 my-9">Clear Cart</button>
+                {props.children}
             </div>
 
 

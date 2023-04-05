@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../../../public/Logo.svg"
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -12,10 +13,10 @@ const Header = () => {
                     </div>
                     <div className="flex-none">
                         <ul className="menu menu-horizontal px-1 text-white">
-                            <li><a>Order</a></li>
-                            <li><a>Order Review</a></li>
-                            <li><a>Manage Inventory</a></li>
-                            <li><a>Login</a></li>
+                            <li><Link to="/order">Order</Link></li>
+                            <li><Link to="/review">Order Review</Link></li>
+                            <li><Link to="/manageinventory">Manage Inventory</Link></li>
+                            <li><Link to="/login">Login</Link></li>
                         </ul>
                     </div>
                 </div>
