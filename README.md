@@ -1,3 +1,3 @@
-# ema-john-vite
+# firebase 
 
-live link: https://guileless-lollipop-f887a9.netlify.app/
+live Link : https://ema-zone-vite.web.app/
