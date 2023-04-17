@@ -11,28 +11,42 @@ import Shop from './Components/Shop/Shop';
 import OrderReview from './Components/OrderReview/OrderReview';
 import ManageInventory from './Components/ManageInventory/ManageInventory';
 import { cartProductLoader } from '../utilities/cartProductLoader';
+import Login from './Components/Login/Login';
+import Registar from './Components/Registar/Registar';
+import AuthContex from './provider/AuthContex';
+import PrivateRoute from './routes/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Home></Home>,
-    children:[
+    element: <Home></Home>,
+    children: [
       {
-        path:"/",
-        element:<Shop></Shop>,
+        path: "/",
+        element: <Shop></Shop>,
       },
       {
-        path:"/order",
-        element:<Shop></Shop>
+        path: "/order",
+        element: <Shop></Shop>
       },
       {
-        path:"/review",
-        element:<OrderReview></OrderReview>,
+        path: "/review",
+        element: <PrivateRoute><OrderReview></OrderReview></PrivateRoute>,
         loader: cartProductLoader
       },
       {
-        path:"/manageinventory",
-        element:<ManageInventory></ManageInventory>,
-        
+        path: "/manageinventory",
+        element: <ManageInventory></ManageInventory>,
+
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+
+      },
+      {
+        path: "/registar",
+        element: <Registar></Registar>,
+
       },
     ]
   },
@@ -40,6 +54,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContex>
+      <RouterProvider router={router} />
+    </AuthContex>
+
   </React.StrictMode>
 );

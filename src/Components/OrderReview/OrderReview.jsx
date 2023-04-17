@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {  } from 'react';
 import Cart from '../Cart/Cart';
 import { useLoaderData } from 'react-router-dom';
 import OfferDetails from '../OfferDetails/OfferDetails';
 import { useState } from 'react';
 import { deleteShoppingCart, removeFromDb } from '../../../utilities/fakedb';
 
+
 const OrderReview = () => {
     const products  = useLoaderData()
     const [cart, setCart] = useState(products)
     const handelRemoveItem=(id)=>{
-        console.log(id);
         const remainingProduct=cart.filter(pd=>pd.id!==id);
         setCart(remainingProduct);
         removeFromDb(id)
