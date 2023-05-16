@@ -23,12 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Shop></Shop>,
-       
+
       },
       {
         path: "/order",
         element: <Shop></Shop>,
-        loader: () => fetch("http://localhost:5000/totalproducts")
+        loader: () => fetch("https://ema-john-server-theta.vercel.app/totalproducts")
       },
       {
         path: "/review",

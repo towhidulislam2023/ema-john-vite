@@ -15,7 +15,7 @@ const Shop = () => {
     const pageNumber = [...Array(totalPage).keys()]
     const options = [5, 10, 15, 20]
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`)
+        fetch(`https://ema-john-server-theta.vercel.app/products?page=${currentPage}&limit=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [currentPage, itemsPerPage]);
@@ -31,7 +31,7 @@ const Shop = () => {
         const ids = Object.keys(storedCart)
 
 
-        fetch('http://localhost:5000/productsbyids', {
+        fetch('https://ema-john-server-theta.vercel.app/productsbyids', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
