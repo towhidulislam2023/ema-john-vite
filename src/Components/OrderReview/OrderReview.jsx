@@ -10,7 +10,7 @@ const OrderReview = () => {
     const products  = useLoaderData()
     const [cart, setCart] = useState(products)
     const handelRemoveItem=(id)=>{
-        const remainingProduct=cart.filter(pd=>pd.id!==id);
+        const remainingProduct=cart.filter(pd=>pd._id!==id);
         setCart(remainingProduct);
         removeFromDb(id)
     }
@@ -25,7 +25,7 @@ const OrderReview = () => {
                     <div className='flex justify-center items-center'>
                         <div>
                             {
-                                cart.map(product => <OfferDetails key={product.id} product={product} handelRemoveItem={handelRemoveItem}  ></OfferDetails>)
+                                cart.map(product => <OfferDetails key={product._id} product={product} handelRemoveItem={handelRemoveItem}  ></OfferDetails>)
                             }
                         </div>
                     </div>
