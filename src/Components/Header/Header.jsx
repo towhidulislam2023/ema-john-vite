@@ -12,12 +12,12 @@ const Header = () => {
     return (
         <>
             <div className="navbar bg-[#1C2B35] ">
-                <div className='w-[80%] mx-auto'>
-                    <div className="flex-1">
-                        <img src={logo} alt="" />
+                <div className='w-[80%] mx-auto '>
+                    <div className="md:flex-1">
+                        <img src={logo} alt="" className='mr-28' />
                     </div>
-                    <div className="flex-none">
-                        <ul className="menu menu-horizontal px-1 text-white">
+                    <div className="md:flex-none flex-wrap">
+                        <ul className="md:menu md:menu-horizontal px-1 text-white">
                             <li><Link to="/">Order</Link></li>
                             <li><Link to="/review">Order Review</Link></li>
                             <li><Link to="/manageinventory">Manage Inventory</Link></li>

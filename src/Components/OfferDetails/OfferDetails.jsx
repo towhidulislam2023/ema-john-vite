@@ -6,7 +6,7 @@ const OfferDetails = ({ product, handelRemoveItem }) => {
     const { _id,img, name, quantity, price, shipping } = product;
     return (
 
-        <div className='flex w-[578px] border-2 items-center gap-10 my-5 py-2 px-3 rounded-lg'>
+        <div className='flex md:w-[578px] border-2 items-center md:gap-10 my-5 py-2 px-3 rounded-lg'>
             <img className='h-32 w-32 rounded-lg' src={img} alt="" />
             <div className='flex-grow'>
                 <h1 className='text-xl font-bold'>{name}</h1>

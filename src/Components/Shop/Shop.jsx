@@ -101,8 +101,8 @@ const Shop = () => {
     }
     return (
         <>
-            <div className='flex gap-5'>
-                <div className='w-[75%]  my-5 mx-2 p-10'>
+            <div className='md:flex gap-5'>
+                <div className='md:w-[75%]  my-5 mx-2 p-10'>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                         {
                             products.map(product => <Product
@@ -112,30 +112,31 @@ const Shop = () => {
                             ></Product>)
                         }
                     </div>
+                    <div className='text-center my-10 '>
+                        {
+                            pageNumber.map(number => <button className={`btn border-warning  btn-outline  mr-2 ${currentPage === number ? "bg-warning text-black" : ""}`}
+                                key={number}
+
+                                onClick={() => setCurrentPage(number)}
+                            >
+                                {number}</button>)
+                        }
+
+                        <select className='select border-warning' value={itemsPerPage} onChange={handelSelectChange}>
+                            {
+                                options.map(option => <option key={option} value={option}>{option}</option>)
+                            }
+                        </select>
+                    </div>
                 </div>
-                <div className='w-[25%] h-screen  bg-[#f39e1e6c] mx-2 sticky top-0'>
+                <div className='md:w-[25%] h-screen  bg-[#f39e1e6c] mx-2 sticky top-0'>
                     <Cart cart={cart} handelClearCart={handelClearCart}>
                         <Link to={'/review'}><button className="btn btn-wide bg-[#FF9900] block text-center border-none hover:bg-[#d48b1d] ">Review Order</button></Link>
                     </Cart>
                 </div>
             </div>
 
-            <div className='text-center mb-5'>
-                {
-                    pageNumber.map(number => <button className={`btn border-warning  btn-outline  mr-2 ${currentPage === number ? "bg-warning text-black" : ""}`}
-                        key={number}
-
-                        onClick={() => setCurrentPage(number)}
-                    >
-                        {number}</button>)
-                }
-
-                <select className='select border-warning' value={itemsPerPage} onChange={handelSelectChange}>
-                    {
-                        options.map(option => <option key={option} value={option}>{option}</option>)
-                    }
-                </select>
-            </div>
+          
 
 
         </>

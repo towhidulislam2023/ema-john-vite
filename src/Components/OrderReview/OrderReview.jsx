@@ -20,8 +20,8 @@ const OrderReview = () => {
     }
     return (
         <div>
-            <div className='flex gap-5'>
-                <div className='w-[75%]  my-5 mx-2 p-10'>
+            <div className='md:flex gap-5'>
+                <div className='md:w-[75%]  my-5 mx-2 md:p-10'>
                     <div className='flex justify-center items-center'>
                         <div>
                             {
@@ -30,7 +30,7 @@ const OrderReview = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[25%] h-screen  bg-[#f39e1e6c] mx-2 sticky top-0'>
+                <div className='md:w-[25%] h-screen  bg-[#f39e1e6c] mx-2 sticky top-0'>
                     <Cart cart={cart} handelClearCart={handelClearCart}>
                         <button className="btn btn-wide bg-[#FF9900] block text-center border-none hover:bg-[#d48b1d] ">Proceed Checkout</button>
                         </Cart>
