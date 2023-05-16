@@ -18,7 +18,7 @@ const Header = () => {
                     </div>
                     <div className="flex-none">
                         <ul className="menu menu-horizontal px-1 text-white">
-                            <li><Link to="/order">Order</Link></li>
+                            <li><Link to="/">Order</Link></li>
                             <li><Link to="/review">Order Review</Link></li>
                             <li><Link to="/manageinventory">Manage Inventory</Link></li>
                             <li>{user ? <Link onClick={handelLogout} className="">Logout</Link> : <Link to="/login">Login</Link>}</li>
